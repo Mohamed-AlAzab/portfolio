@@ -18,11 +18,11 @@ const processes: Process[] = [
 	{
 		title: 'Ideation & Planning',
 		colorClasses: {
-			bg: 'bg-blue-500/10',
-			text: 'text-blue-400',
-			gradientFrom: 'from-blue-500',
-			gradientTo: 'to-purple-500',
-			hoverBorder: 'group-hover:border-blue-500/30',
+			bg: 'bg-brand-accent/10',
+			text: 'text-brand-accent',
+			gradientFrom: 'from-brand-accent',
+			gradientTo: 'to-brand-accent2',
+			hoverBorder: 'group-hover:border-brand-accent/30',
 		},
 		icon: (
 			<path
@@ -37,11 +37,11 @@ const processes: Process[] = [
 	{
 		title: 'Development',
 		colorClasses: {
-			bg: 'bg-purple-500/10',
-			text: 'text-purple-400',
-			gradientFrom: 'from-purple-500',
-			gradientTo: 'to-pink-500',
-			hoverBorder: 'group-hover:border-purple-500/30',
+			bg: 'bg-brand-accent2/10',
+			text: 'text-brand-accent2',
+			gradientFrom: 'from-brand-accent',
+			gradientTo: 'to-brand-accent2',
+			hoverBorder: 'group-hover:border-brand-accent2/30',
 		},
 		icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />,
 		steps: ['Architecture setup and tech stack selection', 'Agile development with regular sprints', 'Continuous testing and code reviews'],
@@ -49,11 +49,11 @@ const processes: Process[] = [
 	{
 		title: 'Launch & Growth',
 		colorClasses: {
-			bg: 'bg-green-500/10',
-			text: 'text-green-400',
-			gradientFrom: 'from-green-500',
-			gradientTo: 'to-emerald-500',
-			hoverBorder: 'group-hover:border-green-500/30',
+			bg: 'bg-brand-accent/10',
+			text: 'text-brand-accent',
+			gradientFrom: 'from-brand-accent',
+			gradientTo: 'to-brand-accent2',
+			hoverBorder: 'group-hover:border-brand-accent/30',
 		},
 		icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />,
 		steps: ['App store optimization and submission', 'Analytics integration and monitoring', 'Regular updates and feature enhancements'],
@@ -65,7 +65,7 @@ const DevelopmentProcess = () => {
 		<section className="py-16 md:py-20 relative">
 			<div className="container mx-auto px-4">
 				<h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-center">Development Process</h2>
-				<p className="text-sm sm:text-base text-gray-400 text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
+				<p className="text-sm sm:text-base text-brand-subtext text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
 					A systematic approach to building exceptional mobile applications
 				</p>
 
@@ -77,7 +77,7 @@ const DevelopmentProcess = () => {
 									className={`absolute inset-0 bg-gradient-to-r ${process.colorClasses.gradientFrom} ${process.colorClasses.gradientTo} rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500`}
 								></div>
 								<div
-									className={`relative bg-gradient-to-b from-gray-800/50 to-gray-900/50 p-8 rounded-2xl backdrop-blur-sm border border-gray-700/50 ${process.colorClasses.hoverBorder} transition-colors duration-300`}
+									className={`relative bg-gradient-to-b from-brand-surface/50 to-brand-bg/50 p-8 rounded-2xl backdrop-blur-sm border border-brand-border/50 ${process.colorClasses.hoverBorder} transition-colors duration-300`}
 								>
 									{/* Icon Container */}
 									<div className="mb-6">
@@ -98,7 +98,7 @@ const DevelopmentProcess = () => {
 												<div className={`w-6 h-6 rounded-full ${process.colorClasses.bg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
 													<span className={`text-sm ${process.colorClasses.text}`}>{stepIndex + 1}</span>
 												</div>
-												<p className="text-sm text-gray-400 group-hover:text-gray-300">{step}</p>
+												<p className="text-sm text-brand-subtext group-hover:text-brand-text/70">{step}</p>
 											</div>
 										))}
 									</div>
