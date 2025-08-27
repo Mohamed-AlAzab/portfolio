@@ -1,6 +1,45 @@
 'use client';
 
 const HeroSection = () => {
+	const group = [
+		{
+			label: 'Apps Published',
+			value: '1',
+			icon: (
+				<svg className="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
+					<path d="M17,1H7A2,2 0 0,0 5,3V21A2,2 0 0,0 7,23H17A2,2 0 0,0 19,21V3A2,2 0 0,0 17,1M17,19H7V5H17V19M16,13H8V11H16V13M16,9H8V7H16V9M7,24H9V22H7V24M11,24H13V22H11V24M15,24H17V22H15V24" />
+				</svg>
+			),
+		},
+		{
+			label: 'Total Downloads',
+			value: '100',
+			icon: (
+				<svg className="w-8 h-8 text-purple-400" viewBox="0 0 24 24" fill="currentColor">
+					<path d="M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03M19,18H6A4,4 0 0,1 2,14C2,11.95 3.53,10.24 5.56,10.03L6.63,9.92L7.13,8.97C8.08,7.14 9.94,6 12,6C14.62,6 16.88,7.86 17.39,10.43L17.69,11.93L19.22,12.04C20.78,12.14 22,13.45 22,15A3,3 0 0,1 19,18M8,13H10.55V16H13.45V13H16L12,9L8,13Z" />
+				</svg>
+			),
+		},
+		{
+			label: 'App Rating',
+			value: '5',
+			icon: (
+				<svg className="w-8 h-8 text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
+					<path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />
+				</svg>
+			),
+		},
+		{
+			label: 'Countries',
+			value: '1',
+			icon: (
+				<svg className="w-8 h-8 text-green-400" viewBox="0 0 24 24" fill="currentColor">
+					<path d="M17.9,17.39C17.64,16.59 16.89,16 16,16H15V13A1,1 0 0,0 14,12H8V10H10A1,1 0 0,0 11,9V7H13A2,2 0 0,0 15,5V4.59C17.93,5.77 20,8.64 20,12C20,14.08 19.2,15.97 17.9,17.39M11,19.93C7.05,19.44 4,16.08 4,12C4,11.38 4.08,10.78 4.21,10.21L9,15V16A2,2 0 0,0 11,18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20Z" />
+				</svg>
+			),
+		},
+	];
+
 	return (
 		<section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden py-16 sm:py-20">
 			<div className="absolute inset-0 z-0">
@@ -11,29 +50,18 @@ const HeroSection = () => {
 			<div className="container mx-auto px-4 z-10">
 				<div className="text-center mb-8">
 					<span className="text-lg md:text-xl text-gray-400 mb-2 block">Hi, I&apos;m</span>
-					
+
 					{/* Name with image next to it */}
 					<div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 mb-4">
-						
+
 						{/* Name text */}
 						<h1 className="text-4xl sm:text-6xl md:text-6xl font-bold">
 							<span className="bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 text-transparent bg-clip-text bg-[size:200%] animate-gradient">
 								Mohamed AlAzab
 							</span>
 						</h1>
-
-						{/* Profile Image */}
-						{/* <div className="relative group">
-							<div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden border-2 border-gradient-to-r from-blue-400 to-purple-500 p-[2px] bg-gradient-to-r from-blue-400 to-purple-500">
-								<img 
-									src="image.JPG" 
-									alt="Profile" 
-									className="w-full h-full object-cover rounded-full bg-gray-800"
-								/>
-							</div>
-						</div> */}
 					</div>
-					
+
 					<h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-300">
 						Mobile App Developer
 					</h2>
@@ -45,44 +73,7 @@ const HeroSection = () => {
 
 				{/* App Store Stats */}
 				<div className="max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-12 px-2">
-					{[
-						{
-							label: 'Apps Published',
-							value: '1',
-							icon: (
-								<svg className="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
-									<path d="M17,1H7A2,2 0 0,0 5,3V21A2,2 0 0,0 7,23H17A2,2 0 0,0 19,21V3A2,2 0 0,0 17,1M17,19H7V5H17V19M16,13H8V11H16V13M16,9H8V7H16V9M7,24H9V22H7V24M11,24H13V22H11V24M15,24H17V22H15V24" />
-								</svg>
-							),
-						},
-						{
-							label: 'Total Downloads',
-							value: '100',
-							icon: (
-								<svg className="w-8 h-8 text-purple-400" viewBox="0 0 24 24" fill="currentColor">
-									<path d="M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03M19,18H6A4,4 0 0,1 2,14C2,11.95 3.53,10.24 5.56,10.03L6.63,9.92L7.13,8.97C8.08,7.14 9.94,6 12,6C14.62,6 16.88,7.86 17.39,10.43L17.69,11.93L19.22,12.04C20.78,12.14 22,13.45 22,15A3,3 0 0,1 19,18M8,13H10.55V16H13.45V13H16L12,9L8,13Z" />
-								</svg>
-							),
-						},
-						{
-							label: 'App Rating',
-							value: '5',
-							icon: (
-								<svg className="w-8 h-8 text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
-									<path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />
-								</svg>
-							),
-						},
-						{
-							label: 'Countries',
-							value: '1',
-							icon: (
-								<svg className="w-8 h-8 text-green-400" viewBox="0 0 24 24" fill="currentColor">
-									<path d="M17.9,17.39C17.64,16.59 16.89,16 16,16H15V13A1,1 0 0,0 14,12H8V10H10A1,1 0 0,0 11,9V7H13A2,2 0 0,0 15,5V4.59C17.93,5.77 20,8.64 20,12C20,14.08 19.2,15.97 17.9,17.39M11,19.93C7.05,19.44 4,16.08 4,12C4,11.38 4.08,10.78 4.21,10.21L9,15V16A2,2 0 0,0 11,18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20Z" />
-								</svg>
-							),
-						},
-					].map((stat, index) => (
+					{group.map((stat, index) => (
 						<div
 							key={index}
 							className="group relative bg-gray-800/30 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-6 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300"

@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import { Profile } from "../constant";
 
 const ContactSection = () => {
 	return (
@@ -31,7 +32,7 @@ const ContactSection = () => {
 					{/* Contact Buttons */}
 					<div className="flex flex-col sm:flex-row justify-center gap-4">
 						<a
-							href="https://mail.google.com/mail/?view=cm&fs=1&to=mohamed.alazab.ibrahim@gmail.com"
+							href={Profile.email}
 							target="_blank"
 							className="px-8 py-3 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full font-medium hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2 shadow-lg shadow-purple-500/20"
 						>
@@ -42,7 +43,7 @@ const ContactSection = () => {
 							Get in Touch
 						</a>
 						<a
-							href="https://drive.google.com/file/d/1mS9O8Aq761JXVTrPP2pd-I2hnYwRbGwB/view?usp=drive_link"
+							href={Profile.cvUrl}
 							target="_blank"
 							className="px-8 py-3 bg-gray-800 rounded-full font-medium hover:bg-gray-700 transition-colors inline-flex items-center justify-center gap-2 border border-gray-700"
 						>
@@ -61,7 +62,7 @@ const ContactSection = () => {
 					{/* Social Links */}
 					<div className="flex justify-center gap-6">
 						<a
-							href="https://github.com/Mohamed-AlAzab"
+							href={Profile.github}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-full"
@@ -71,7 +72,7 @@ const ContactSection = () => {
 							</svg>
 						</a>
 						<a
-							href="https://www.linkedin.com/in/mohamed-alazab-ibrahim/"
+							href={Profile.linkedIn}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-full"
