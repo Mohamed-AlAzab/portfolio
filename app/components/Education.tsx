@@ -29,10 +29,10 @@ export default function Education() {
     ];
 
     return (
-        <section className="max-w-6xl mx-auto px-6 py-20">
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
             {/* Header */}
-            <div className="px-6 py-8 text-center">
-                <h2 className="text-4xl sm:text-6xl md:text-4xl font-bold">
+            <div className="px-4 py-6 sm:py-8 text-center">
+                <h2 className="text-3xl sm:text-5xl md:text-4xl font-bold">
                     <span className="bg-gradient-to-r from-brand-accent via-brand-accent2 to-brand-accent text-transparent bg-clip-text bg-[size:200%] animate-gradient">
                         Education
                     </span>
@@ -40,14 +40,14 @@ export default function Education() {
             </div>
 
             {/* Education Timeline */}
-            <div className="bg-brand-surface rounded-3xl shadow-xl border border-brand-border p-10 space-y-8">
+            <div className="bg-brand-surface rounded-2xl sm:rounded-3xl shadow-xl border border-brand-border p-6 sm:p-10 space-y-10">
                 {educationList.map((edu, index) => (
                     <div
                         key={index}
-                        className="relative pl-8 border-l-4 border-brand-accent flex items-start gap-6"
+                        className="relative pl-4 sm:pl-8 border-l-4 border-brand-accent flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6"
                     >
                         {edu.logo && (
-                            <div className="w-28 h-28 flex items-center justify-center bg-white rounded-2xl border border-brand-border shadow-sm overflow-hidden">
+                            <div className="w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center bg-white rounded-xl sm:rounded-2xl border border-brand-border shadow-sm overflow-hidden">
                                 <img
                                     src={edu.logo}
                                     alt={edu.institution}
@@ -57,14 +57,14 @@ export default function Education() {
                         )}
 
                         {/* Text Content */}
-                        <div>
-                            <h3 className="text-2xl font-semibold text-brand-text">
+                        <div className="text-center sm:text-left">
+                            <h3 className="text-xl sm:text-2xl font-semibold text-brand-text">
                                 {edu.degree}
                             </h3>
-                            <p className="text-lg text-brand-accent font-medium">
+                            <p className="text-base sm:text-lg text-brand-accent font-medium">
                                 {edu.institution} — {edu.period}
                             </p>
-                            <p className="text-brand-subtext leading-relaxed mt-2">
+                            <p className="text-sm sm:text-base text-brand-subtext leading-relaxed mt-2">
                                 {edu.description}
                             </p>
                         </div>
