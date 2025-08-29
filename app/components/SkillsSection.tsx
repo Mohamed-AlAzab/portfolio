@@ -107,11 +107,18 @@ const categoryConfig = {
 const SkillsSection = () => {
 	const [activeCategory, setActiveCategory] = useState<string | null>(null);
 	const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+	const [showAll, setShowAll] = useState(false);
 
 	const categories = Object.keys(categoryConfig) as Array<keyof typeof categoryConfig>;
 
+	// Filter + limit skills
+	const filteredSkills = skills.filter(
+		skill => activeCategory === null || skill.category === activeCategory
+	);
+	const visibleSkills = showAll ? filteredSkills : filteredSkills.slice(0, 4);
+
 	return (
-		<section className="py-16 md:py-20 relative overflow-hidden">			
+		<section className="py-16 md:py-20 relative overflow-hidden">
 			<div className="container mx-auto px-4 relative z-10">
 				<div className="text-center mb-12">
 					<h2 className="text-4xl sm:text-6xl md:text-4xl font-bold">
@@ -119,7 +126,6 @@ const SkillsSection = () => {
 							Technical Expertise
 						</span>
 					</h2>
-					
 					<p className="text-brand-subtext max-w-2xl mx-auto text-lg">
 						Specialized in Flutter development with comprehensive mobile app development skills
 					</p>
@@ -157,80 +163,75 @@ const SkillsSection = () => {
 				</div>
 
 				{/* Skills Grid */}
-				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-					{skills
-						.filter(skill => activeCategory === null || skill.category === activeCategory)
-						.map((skill, index) => {
-							const config = categoryConfig[skill.category as keyof typeof categoryConfig];
-							const isHovered = hoveredSkill === skill.name;
-							
-							return (
-								<div
-									key={skill.name}
-									className={`group relative bg-brand-bg/50 backdrop-blur-sm p-6 rounded-2xl border transition-all duration-500 hover:scale-105 ${
-										isHovered ? `${config.borderColor} shadow-2xl` : 'border-brand-border/50 hover:border-brand-border/80'
-									}`}
-									style={{
-										animationDelay: `${index * 100}ms`
-									}}
-									onMouseEnter={() => setHoveredSkill(skill.name)}
-									onMouseLeave={() => setHoveredSkill(null)}
-								>
-									{/* Category Badge */}
-									<div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium mb-4 ${config.bgColor} ${config.textColor} border ${config.borderColor}`}>
-										{config.icon}
-										{config.title}
-									</div>
+				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
+					{visibleSkills.map((skill, index) => {
+						const config = categoryConfig[skill.category as keyof typeof categoryConfig];
+						const isHovered = hoveredSkill === skill.name;
 
-									{/* Skill Header */}
-									<div className="flex items-center justify-between mb-4">
-										<h3 className="text-xl font-bold text-brand-text">{skill.name}</h3>
-									</div>
-
-									{/* Skill Details */}
-									<div className={`space-y-2 transition-all duration-300 ${isHovered ? 'opacity-100' : 'opacity-70'}`}>
-										{skill.details?.map((detail, detailIndex) => (
-											<div key={detailIndex} className="flex items-start gap-2 text-sm text-brand-text/80">
-												<div className={`w-1.5 h-1.5 rounded-full ${config.bgColor} mt-2 flex-shrink-0`}></div>
-												<span>{detail}</span>
-											</div>
-										))}
-									</div>
-
-									{/* Proficiency Level */}
-									<div className="mt-4 pt-4 border-t border-brand-border/50">
-										<div className="flex items-center justify-between">
-											<span className="text-xs text-brand-subtext">Proficiency Level</span>
-											<span className={`text-xs font-medium px-2 py-1 rounded ${
-												skill.level >= 90 ? 'bg-brand-accent/20 text-brand-accent' :
-												skill.level >= 80 ? 'bg-brand-accent/20 text-brand-accent' :
-												'bg-brand-accent2/20 text-brand-accent2'
-											}`}>
-												{skill.level >= 90 ? 'Expert' : skill.level >= 80 ? 'Advanced' : 'Intermediate'}
-											</span>
-										</div>
-									</div>
-
-									{/* Hover Glow Effect */}
-									<div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${config.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none`}></div>
+						return (
+							<div
+								key={skill.name}
+								className={`group relative bg-brand-bg/50 backdrop-blur-sm p-6 rounded-2xl border transition-all duration-500 hover:scale-105 ${
+									isHovered ? `${config.borderColor} shadow-2xl` : 'border-brand-border/50 hover:border-brand-border/80'
+								}`}
+								style={{ animationDelay: `${index * 100}ms` }}
+								onMouseEnter={() => setHoveredSkill(skill.name)}
+								onMouseLeave={() => setHoveredSkill(null)}
+							>
+								{/* Category Badge */}
+								<div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium mb-4 ${config.bgColor} ${config.textColor} border ${config.borderColor}`}>
+									{config.icon}
+									{config.title}
 								</div>
-							);
-						})}
-				</div>
-			</div>
 
-			<style jsx>{`
-				@keyframes slideInUp {
-					from {
-						opacity: 0;
-						transform: translateY(30px);
-					}
-					to {
-						opacity: 1;
-						transform: translateY(0);
-					}
-				}
-			`}</style>
+								{/* Skill Header */}
+								<div className="flex items-center justify-between mb-4">
+									<h3 className="text-xl font-bold text-brand-text">{skill.name}</h3>
+								</div>
+
+								{/* Skill Details */}
+								<div className={`space-y-2 transition-all duration-300 ${isHovered ? 'opacity-100' : 'opacity-70'}`}>
+									{skill.details?.map((detail, detailIndex) => (
+										<div key={detailIndex} className="flex items-start gap-2 text-sm text-brand-text/80">
+											<div className={`w-1.5 h-1.5 rounded-full ${config.bgColor} mt-2 flex-shrink-0`}></div>
+											<span>{detail}</span>
+										</div>
+									))}
+								</div>
+
+								{/* Proficiency Level */}
+								<div className="mt-4 pt-4 border-t border-brand-border/50">
+									<div className="flex items-center justify-between">
+										<span className="text-xs text-brand-subtext">Proficiency Level</span>
+										<span className={`text-xs font-medium px-2 py-1 rounded ${
+											skill.level >= 90 ? 'bg-brand-accent/20 text-brand-accent' :
+											skill.level >= 80 ? 'bg-brand-accent/20 text-brand-accent' :
+											'bg-brand-accent2/20 text-brand-accent2'
+										}`}>
+											{skill.level >= 90 ? 'Expert' : skill.level >= 80 ? 'Advanced' : 'Intermediate'}
+										</span>
+									</div>
+								</div>
+
+								{/* Hover Glow Effect */}
+								<div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${config.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none`}></div>
+							</div>
+						);
+					})}
+				</div>
+
+				{/* Toggle Button */}
+				{filteredSkills.length > 4 && (
+					<div className="text-center">
+						<button
+							onClick={() => setShowAll(!showAll)}
+							className="px-6 py-2 rounded-full text-sm font-medium bg-brand-surface/70 text-brand-text hover:bg-brand-border/50 transition-all duration-300"
+						>
+							{showAll ? 'Show Less' : 'Show More'}
+						</button>
+					</div>
+				)}
+			</div>
 		</section>
 	);
 };

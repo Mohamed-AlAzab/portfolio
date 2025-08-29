@@ -64,7 +64,11 @@ const DevelopmentProcess = () => {
 	return (
 		<section className="py-16 md:py-20 relative">
 			<div className="container mx-auto px-4">
-				<h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-center">Development Process</h2>
+				<h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">
+						<span className="bg-gradient-to-r from-brand-accent via-brand-accent2 to-brand-accent text-transparent bg-clip-text bg-[size:200%] animate-gradient">
+							Development Process
+						</span>
+					</h2>
 				<p className="text-sm sm:text-base text-brand-subtext text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
 					A systematic approach to building exceptional mobile applications
 				</p>

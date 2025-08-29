@@ -42,7 +42,11 @@ const AppShowcase = () => {
 	return (
 		<section className="py-16 md:py-20 relative">
 			<div className="container mx-auto px-4">
-				<h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">Featured Apps</h2>
+				<h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">
+					<span className="bg-gradient-to-r from-brand-accent via-brand-accent2 to-brand-accent text-transparent bg-clip-text bg-[size:200%] animate-gradient">
+						Featured Apps
+					</span>
+				</h2>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
 					{apps.map((app) => (
 						<div
@@ -68,9 +72,11 @@ const AppShowcase = () => {
 											<h3 className="text-xl font-bold group-hover:text-brand-accent transition-colors text-center sm:text-left break-words">
 												{app.name}
 											</h3>
-											<span className="px-2 py-0.5 rounded-full text-xs bg-brand-accent/10 text-brand-accent border border-brand-accent/20 whitespace-nowrap">
-												{app.id === 1 ? "Featured" : "New"}
-											</span>
+
+											{app.id === 1 ? <span className="px-2 py-0.5 rounded-full text-xs bg-brand-accent/10 text-brand-accent border border-brand-accent/20 whitespace-nowrap">
+												New
+											</span> : <h1></h1>}
+
 										</div>
 										<p className="text-brand-subtext mb-4 text-center sm:text-left">
 											{app.description}

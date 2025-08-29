@@ -35,24 +35,32 @@ export default function AboutUs() {
                         {/* Name and Title */}
                         <div className="text-center lg:text-left">
                             <h3 className="text-4xl font-bold text-brand-text mb-3">
-                                Mohamed AlAzab
+                                {Profile.creator}
                             </h3>
                             <p className="text-xl text-brand-accent font-semibold mb-2">
                                 Student @ Faculty of Computer Science - Alexandria University
                             </p>
                         </div>
+                        
                         {/* Professional Summary */}
                         <div className="space-y-4">
                             <h4 className="text-2xl font-semibold text-brand-text border-b-2 border-brand-accent/20 pb-2">
                                 Professional Summary
                             </h4>
                             <p className="text-brand-subtext leading-relaxed text-lg">
-                                Passionate about building modern applications that combine 
-                                functionality with seamless user experiences. Skilled in Flutter, 
-                                Firebase, Hive and BLoC with a strong focus on mobile development, 
-                                clean architecture, and responsive design.
+                                I’m a Computer Science student at Alexandria University with a 
+                                passion for building modern mobile applications. My journey into 
+                                development started with simple apps, but quickly grew into a 
+                                love for creating products that genuinely connect with people.
+                            </p>
+                            <p className="text-brand-subtext leading-relaxed text-lg">
+                                Skilled in Flutter, Firebase, Hive, and BLoC, I focus on building 
+                                clean, scalable, and responsive apps with seamless user experiences. 
+                                What sets me apart is my ability to blend technical precision with 
+                                creative problem-solving — I don’t just write code, I craft experiences.
                             </p>
                         </div>
+
                         {/* Social + Resume */}
                         <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-4 pt-0">
                             {/* Social Icons */}
@@ -73,7 +81,7 @@ export default function AboutUs() {
                                 target="_blank"
                                 className="px-6 py-3 bg-gradient-to-r from-brand-accent to-brand-accent2 text-white font-medium rounded-xl shadow-md hover:opacity-90 transition-all"
                             >
-                                Veiw CV
+                                View CV
                             </a>
                         </div>
                     </div>

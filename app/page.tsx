@@ -8,13 +8,14 @@ import DevelopmentProcess from "./components/DevelopmentProcess";
 import ContactSection from "./components/ContactSection";
 import { Menu, X } from "lucide-react";
 import AboutUs from "./components/AboutUs";
+import Education from "./components/Education";
 
 export default function MobileDevPortfolio() {
   const activeSection = "Home";
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled] = useState(false);
 
-  const navItems = ["Home", "About", "Skills", "Projects", "Process", "Contact"];
+  const navItems = ["Home", "About", "Education", "Skills", "Projects", "Process", "Contact"];
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -97,6 +98,7 @@ export default function MobileDevPortfolio() {
       <main className="pt-0 scroll-smooth" style={{ scrollPaddingTop: "50px" }}>
         <section id="Home"><HeroSection /></section>
         <section id="About"><AboutUs /></section>
+        <section id="Education"><Education /></section>
         <section id="Skills"><SkillsSection /></section>
         <section id="Projects"><AppShowcase /></section>
         <section id="Process"><DevelopmentProcess /></section>
