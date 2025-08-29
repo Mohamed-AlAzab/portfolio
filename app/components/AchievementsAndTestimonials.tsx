@@ -56,7 +56,7 @@ export default function AchievementsAndTestimonials() {
             {/* المحتوى */}
             <div className="grid lg:grid-cols-2 gap-16 items-start">
                 
-                {/* Achievements - كل وحدة في مربع صغير */}
+                {/* Achievements */}
                 <div className="grid sm:grid-cols-2 gap-6">
                     {achievements.map((a, index) => (
                         <div
@@ -74,7 +74,7 @@ export default function AchievementsAndTestimonials() {
                     ))}
                 </div>
 
-                {/* Testimonials - زي ما هي لكن أصغر شوية */}
+                {/* Testimonials */}
                 <div className="grid gap-6">
                     {testimonials.map((t, index) => (
                         <div
@@ -82,7 +82,7 @@ export default function AchievementsAndTestimonials() {
                             className="bg-brand-surface rounded-lg shadow-md border border-brand-border p-6 hover:shadow-lg transition-all"
                         >
                             <p className="text-brand-subtext italic mb-3 text-sm">
-                                "{t.feedback}"
+                                &quot;{t.feedback}&quot;
                             </p>
                             <h4 className="text-base font-semibold text-brand-text">
                                 {t.name}
