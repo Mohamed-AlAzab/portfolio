@@ -115,7 +115,7 @@ const SkillsSection = () => {
 	const filteredSkills = skills.filter(
 		skill => activeCategory === null || skill.category === activeCategory
 	);
-	const visibleSkills = showAll ? filteredSkills : filteredSkills.slice(0, 4);
+	const visibleSkills = showAll ? filteredSkills : filteredSkills.slice(0, 3);
 
 	return (
 		<section className="py-16 md:py-20 relative overflow-hidden">
