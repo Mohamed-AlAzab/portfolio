@@ -18,14 +18,6 @@ export default function Education() {
                 "Learned Dart, Flutter UI, Advanced flutter, state management, and Firebase integrations.",
             logo: "/DEPI.png",
         },
-        {
-            degree: "Mobile App Developer - Fake",
-            institution: "Coursera",
-            period: "2025",
-            description:
-                "Learned Dart, Flutter UI, Advanced flutter, state management, and Firebase integrations.",
-            logo: "/Coursera.svg",
-        },
     ];
 
     return (
