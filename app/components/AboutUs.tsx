@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Profile } from "../constant";
 
@@ -22,9 +23,12 @@ export default function AboutUs() {
                     {/* Image */}
                     <div className="relative flex-shrink-0">
                         <div className="w-72 h-72 rounded-2xl overflow-hidden shadow-2xl border-4 border-brand-border">
-                            <img
+                            <Image
                                 src="/image.JPG"
                                 alt="Profile Photo"
+                                width={288}
+                                height={288}
+                                priority
                                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>

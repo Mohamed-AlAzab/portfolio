@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 interface App {
 	id: number;
 	name: string;
@@ -58,9 +60,11 @@ const AppShowcase = () => {
 									{/* App Icon */}
 									<div className="w-16 sm:w-20 h-16 sm:h-20 rounded-2xl bg-gradient-to-br from-brand-accent to-brand-accent2 p-1 flex-shrink-0 relative">
 										<div className="w-full h-full rounded-xl bg-brand-bg flex items-center justify-center overflow-hidden relative">
-											<img
+											<Image
 												src={app.icon}
 												alt={app.name}
+												width={80}
+												height={80}
 												className="w-full h-full object-contain"
 											/>
 										</div>
@@ -142,7 +146,7 @@ const AppShowcase = () => {
 												className="px-4 py-2 rounded-full bg-brand-accent text-brand-text font-medium flex items-center gap-2 hover:bg-brand-accent/90 transition-colors"
 											>
 												<span className="w-5 h-5 flex items-center justify-center">
-													<img src="/android.svg" alt="Android" />
+													<Image src="/android.svg" alt="Android" width={20} height={20} />
 												</span>
 												Install
 											</a>
@@ -153,7 +157,7 @@ const AppShowcase = () => {
 												className="px-4 py-2 rounded-full bg-brand-surface text-white font-medium flex items-center gap-2 hover:bg-brand-border transition-colors"
 											>
 												<span className="w-5 h-5 flex items-center justify-center">
-													<img src="/apple.svg" alt="iOS" />
+													<Image src="/apple.svg" alt="iOS" width={20} height={20} />
 												</span>
 												Install
 											</a>

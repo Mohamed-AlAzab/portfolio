@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function Education() {
     const educationList = [
         {
@@ -40,9 +42,11 @@ export default function Education() {
                     >
                         {edu.logo && (
                             <div className="w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center bg-white rounded-xl sm:rounded-2xl border border-brand-border shadow-sm overflow-hidden">
-                                <img
+                                <Image
                                     src={edu.logo}
                                     alt={edu.institution}
+                                    width={112}
+                                    height={112}
                                     className="w-full h-full object-contain p-2"
                                 />
                             </div>
